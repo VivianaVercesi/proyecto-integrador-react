@@ -1,0 +1,14 @@
+#contact form{
+        width: 60%;
+        
+    }
+#contact label, input, .btn-in {
+        font-size: 1.9rem;
+        
+    }
+#contact textarea::placeholder{
+        font-size: 1.7rem;
+    }
+#contact input, textarea, .btn-in {
+    background-color: #ffffff; /* Fondo blanco */
+}

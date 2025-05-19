@@ -1,0 +1,55 @@
+/*Estilo de la barra de navegación*/
+#nav {
+    background-color: #747b77;
+    position: fixed; /* Hace que la nav sea fija */
+    top: 0; /* Coloca la nav en la parte superior */
+    width: 100%; /* Asegura que la nav ocupe todo el ancho de la página */
+    padding: 1rem; /* Espaciado interno */
+    z-index: 1000; /* Asegura que la nav esté por encima de otros elementos */ 
+}
+
+.navbar .navbar-item {
+    color:rgb(43, 25, 45)!important; 
+    font-weight: bold;
+}
+.navbar .nav-item:hover{
+    font-weight:bolder;
+    color: whitesmoke;
+    }
+
+  
+.nav .navbar-brand {
+    font-weight: bold;
+    color: rgb(89, 66, 92);
+        
+}
+      
+.navbar .nav-item {
+    color: rgb(89, 66, 92); 
+    margin: 0 10px; 
+        
+}
+      
+.navbar .nav-link:hover {
+    
+    font-weight: bolder;
+    color:whitesmoke;
+}
+      
+.navbar-toggler {
+    border-color: #4c4974; 
+}
+ #cart-icon {
+    margin-right: 2rem;
+}
+.bi-cart {
+    margin-right: 2rem;
+}
+#cart-count {
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    color: rgb(43, 25, 45);
+  }
+#cart-count:hover {
+    color: white
+}

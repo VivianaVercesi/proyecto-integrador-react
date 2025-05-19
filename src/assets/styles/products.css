@@ -1,0 +1,119 @@
+/*Estilo de la lista de productos*/
+.title {
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+}
+#product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:center; /* Alinea el contenido hacia abajo */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto dentro del párrafo */
+    padding-bottom: 5rem; /* Ajusta el espacio entre el contenido y el borde inferior */
+    box-sizing: border-box; 
+    
+}
+
+
+.flex-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column; 
+  }
+ 
+.product-card {
+    margin: 2rem 2rem;
+    border: rgb(130, 99, 134) solid;
+    border-radius: 15px;
+    background-color: #f4daf2;
+    max-width: 90%;
+    
+}
+
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 250px;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+
+.product-image{
+    display: block;
+    margin: 2rem auto;
+    size: 80%;
+    max-width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px 10px 0px 0px;
+    object-fit: cover;
+    width: 80%;
+  }
+
+  .product-image:hover {
+    transform: scale(1.8, 1.8);
+  }
+
+.title {
+    font-family: "Oleo Script", system-ui;
+    color: rgb(74, 57, 77);
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.product-details h2 {
+    color: rgb(74, 57, 77);
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+#color1 {
+    background-color: rgb(241, 139, 209);
+    color: white;
+}
+#color2 {
+    background-color: rgb(176, 133, 181); 
+    color: white;
+}
+#color3 {
+    background-color: rgb(81, 21, 95); 
+    color: white;
+}
+#color4 {
+    background-color: rgb(128, 177, 233); 
+    color: white;
+}
+#color5 {
+    background-color: rgb(28, 55, 131); 
+    color: white;
+}
+#color6 {
+    background-color: black;
+    color: white;
+}
+#color7 {
+    background-color: white;
+    color: black;
+}
+.product-details button {
+    display: inline-block;
+    padding: 0.5rem 0.6rem;
+    border: solid rgb(130, 99, 134);
+    color: rgb(89, 66, 92);
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+ }

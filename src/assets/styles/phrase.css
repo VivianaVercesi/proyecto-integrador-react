@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap');
+
+/*Estilo de la frase de la página de inicio*/
+.phrase {
+    font-family: 'Oleo Script', cursive;
+    font-weight: 100;
+    font-style: normal;
+    color: #3a333e;
+    font-size: 4rem;
+    position: relative;
+    z-index: 1; 
+    margin-top: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+    font: italic;
+}
+
+ 
+  

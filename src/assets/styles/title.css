@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap');
+
+/*Estilo del nombre*/
+#trademark {
+    font-family: 'Oleo Script', cursive;
+    font-weight: 100;
+    font-style: normal;
+    color: rgb(74, 57, 77);
+    font-size: 7rem; 
+    padding-top: 1rem;
+    text-align: center; 
+    z-index: 1; 
+    margin-top: 8rem;
+    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+}
+.trademark {
+    font: italic;
+    width: 100%;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 7rem;
+}
