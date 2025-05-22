@@ -1,0 +1,18 @@
+/*Estilo del botón de la página de inicio*/
+.btn-in {
+    display: inline-block;
+    padding: 0.5rem 0.6rem;
+    border: solid rgb(130, 99, 134);
+    color: rgb(89, 66, 92);
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+ 
+.btn-in:hover {
+    background-color: rgb(89, 66, 92);
+    color: whitesmoke;
+}

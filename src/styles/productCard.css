@@ -1,50 +1,19 @@
-/*Estilo de la lista de productos*/
-.title {
-    font-size: 2rem;
-    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
-}
-#product-container {
-    display: flex;
-    flex-direction: column;
-    justify-content:center; /* Alinea el contenido hacia abajo */
-    align-items: center; /* Centra horizontalmente */
-    text-align: center; /* Centra el texto dentro del párrafo */
-    padding-bottom: 5rem; /* Ajusta el espacio entre el contenido y el borde inferior */
-    box-sizing: border-box; 
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap');
 
-
-.flex-container {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column; 
-  }
- 
 .product-card {
     margin: 2rem 2rem;
     border: rgb(130, 99, 134) solid;
     border-radius: 15px;
     background-color: #f4daf2;
     max-width: 90%;
-    
-}
-
-
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .product-card {
     border: 1px solid #ccc;
     padding: 20px;
     width: 250px;
     margin: 10px;
     box-sizing: border-box;
-  }
+    
+}
+  
 
 .product-image{
     display: block;
@@ -62,7 +31,7 @@
   }
 
 .title {
-    font-family: "Oleo Script", system-ui;
+    font-family: "Oleo Script", cursive;
     color: rgb(74, 57, 77);
     font-size: 2rem;
     text-align: center;

@@ -16,10 +16,12 @@ html, body {
     z-index: 0; 
     margin: 0;
     height: 100vh;
+    min-height: 10vh;
     align-content: center;
     display: flex;
+    flex-direction: column;
     width: 100%;
-    width: 100vw;
+    overflow-x: hidden;
     padding: 0;
 }
 
@@ -33,7 +35,16 @@ html, body {
     text-align: center;
 }
 
-
+footer{
+    width: 100%;
+    padding: 0.5rem;
+    border-right: 3rem;
+    box-sizing: border-box; /* Incluye el borde en el ancho */
+    font-size: 0.5rem;
+    color: rgb(74, 79, 74);
+    transform: scale(0.5); /* Reduce al 20% */
+    transform-origin: left;
+}
 
 
 

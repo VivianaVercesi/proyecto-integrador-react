@@ -7,7 +7,11 @@
     padding: 1rem; /* Espaciado interno */
     z-index: 1000; /* Asegura que la nav esté por encima de otros elementos */ 
 }
+ .nav-item {
+        font-size: 1.9rem;
+    }
 
+    
 .navbar .navbar-item {
     color:rgb(43, 25, 45)!important; 
     font-weight: bold;
@@ -29,7 +33,14 @@
     margin: 0 10px; 
         
 }
-      
+
+.nav-link.active {
+    font-weight: bolder;
+    color: rgb(43, 30, 43) !important;
+    
+
+}
+
 .navbar .nav-link:hover {
     
     font-weight: bolder;

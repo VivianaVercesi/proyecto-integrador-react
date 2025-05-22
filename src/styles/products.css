@@ -1,0 +1,24 @@
+/*Estilo de la lista de productos*/
+html, header .title {
+    font-size: 0.7rem;
+    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+    margin-bottom: 2rem;
+}
+
+
+#product-container {
+  display: flex;
+  flex-direction: column; /* puede ser cambiado a row si se necesita */
+  flex-wrap: wrap; /* se aplica solo si flex-direction es row o column */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 5rem;
+  margin-top: 130rem;
+  box-sizing: border-box;
+  position: static;
+  height: auto;
+  overflow: visible;   
+}
+
+

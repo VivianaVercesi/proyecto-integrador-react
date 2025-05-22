@@ -1,7 +1,7 @@
 .title {
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
-    margin-top: 10rem;
+    margin-top: 2rem;
 }
 
 .products-container {
@@ -12,9 +12,10 @@
     align-items: flex start; /* Centra horizontalmente */
     text-align: center; /* Centra el texto dentro del párrafo */
     padding-bottom: 5rem; /* Ajusta el espacio entre el contenido y el borde inferior */
-   box-sizing: border-box;
-    margin-top: 30rem; 
-    
+    box-sizing: border-box;
+    margin-top: 35rem; /* Bajamos mucho este margen */
+    width: 100%; /* Aseguramos que no desborde */
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 

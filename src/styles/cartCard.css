@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap');
+
+.cart-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f4daf2;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen - 30% */
+.cart-card img.cart-image {
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.cart-image-container {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Detalles - 40% */
+.cart-details {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: rgb(74, 57, 77);
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 1rem;
+}
+
+/* Cantidad y precios - 30% */
+.cartNumbers {
+    flex: 0 0 30%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+.cart-title {
+    font-family: "Oleo Script", cursive;
+    color: rgb(74, 57, 77);
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+.cart-image:hover {
+    transform: scale(1.8, 1.8);
+  }
+
+
+.cart-unit {
+
+}
+
+.cart-sub {
+
+}
+
+.btn-cart {
+    display: inline-block;
+    padding: 0.5rem 0.6rem;
+    border: solid rgb(130, 99, 134);
+    color: rgb(89, 66, 92);
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  
+
+
+
+  
+
+
+
+
+#color1 {
+    background-color: rgb(241, 139, 209);
+    color: white;
+}
+#color2 {
+    background-color: rgb(176, 133, 181); 
+    color: white;
+}
+#color3 {
+    background-color: rgb(81, 21, 95); 
+    color: white;
+}
+#color4 {
+    background-color: rgb(128, 177, 233); 
+    color: white;
+}
+#color5 {
+    background-color: rgb(28, 55, 131); 
+    color: white;
+}
+#color6 {
+    background-color: black;
+    color: white;
+}
+#color7 {
+    background-color: white;
+    color: black;
+}
+.product-details button {
+    display: inline-block;
+    padding: 0.5rem 0.6rem;
+    border: solid rgb(130, 99, 134);
+    color: rgb(89, 66, 92);
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+ }
