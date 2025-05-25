@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { useParams,Link } from "react-router-dom";
-import "../styles/ProductDetails.css";
+import "../styles/productDetails.css";
 import { dispararSweetBasico } from '../assets/sweetAlert';
 
 function ProductDetails({functionCart}) {
