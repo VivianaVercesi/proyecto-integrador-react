@@ -71,7 +71,7 @@ function ProductDetails({functionCart}) {
                 <button onClick={increaseCounter}>+</button>
               </div>
               <button onClick={addToCart}>Agregar al carrito</button>
-              <Link to={"/Products/" + product.id} ><button>Volver al listado de productos</button></Link>
+              
             </div>
         </div>
     </div>
