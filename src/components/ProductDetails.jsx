@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { useParams,Link } from "react-router-dom";
 import "../styles/productDetails.css";
 import { dispararSweetBasico } from '../assets/sweetAlert';
+import { CartContext } from "../contexts/CartContext";
 
-function ProductDetails({functionCart}) {
+function ProductDetails({}) {
+  const {addToCart} = useContext(CartContext);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -39,10 +41,10 @@ function ProductDetails({functionCart}) {
   }
 }, [product]);
 
-  function addToCart() {
+  function functionCart() {
     if (quantity < 1) return;
     dispararSweetBasico("Producto Agregado", "El producto fue agregado al carrito con éxito", "success", "Cerrar");
-    functionCart({ ...product, quantity });
+    addToCart({ ...product, quantity });
   }
 
   function increaseCounter() {
@@ -70,7 +72,7 @@ function ProductDetails({functionCart}) {
                 <span>{quantity}</span>
                 <button onClick={increaseCounter}>+</button>
               </div>
-              <button onClick={addToCart}>Agregar al carrito</button>
+              <button onClick={functionCart}>Agregar al carrito</button>
               
             </div>
         </div>

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
 import CartCard from "../components/CartCard";
 import { Navigate } from "react-router-dom";
 import "../styles/cart.css";
+import { CartContext } from "../contexts/CartContext";
+import { useAuthContext } from "../contexts/AuthContext";
 
-function Cart({productsCart,setProductsCart, deleteFromCart, loggedInUser}) {
-    console.log("Productos: " + productsCart)   
+function Cart() {
+  const {user} = useAuthContext(); 
+  const{productsCart,setProductsCart, emptyCart, deleteFromCart} = useContext(CartContext); 
+  console.log("Productos: " + productsCart)   
 
     function functionCart(id) {
     deleteFromCart(id);
@@ -38,7 +42,7 @@ function Cart({productsCart,setProductsCart, deleteFromCart, loggedInUser}) {
     
     console.log("Total: " + total)
 
-    if(!loggedInUser){
+    if(!user){
         return(
             <Navigate to="/login" replace/>
         )
@@ -69,6 +73,7 @@ function Cart({productsCart,setProductsCart, deleteFromCart, loggedInUser}) {
             ))
             : <p className="empty-cart"></p>}
              {total > 0 ? <span className="total-to-pay">Total a pagar: {total.toFixed(2)} $</span>: <></>}
+             <button onClick={emptyCart}>Vaciar Carrito</button>
         </div>
     )
 }

@@ -1,0 +1,93 @@
+/* Fondo general con imagen */
+.products-form-container {
+  background: url(../assets/images/image1.webp) no-repeat center center fixed;
+  background-size: cover;
+  margin: 2rem auto;
+  height: 100vh;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 0;
+}
+
+/* Contenedor del formulario */
+.products-form-card {
+  position: relative;
+  z-index: 2;
+  background: rgb(123, 98, 126, 0.9); /* semitransparente */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+.products-form-card h2 {
+  margin: 2rem 0;
+  color: whitesmoke;
+  font-size: 3rem;
+}
+
+.products-form-card label {
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  
+  color: rgb(38, 10, 44);
+}
+
+/* Inputs y textarea */
+.products-form-card input,
+.products-form-card textarea {
+  color: rgb(74, 57, 77);
+  font-size: 1.5rem;
+  width: 90%;
+  border-radius: 20px;
+  font-weight: bolder;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border: none;
+  
+}
+
+/* Botón */
+.products-form-card .products-submit-btn{
+  font-size: 2rem !important;
+  font-weight: bolder;
+  padding: 0.9rem 0.6rem;
+  margin: 2rem 0 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  border: solid rgb(210, 190, 213);
+  color: rgb(38, 10, 44);
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.products-submit-btn:hover {
+  background-color: rgb(89, 66, 92);
+  color: whitesmoke;
+}
+
+/* Mensajes de error */
+.error {
+  color: #4e0e3eff;
+  background-color: #fff0f5; /* Fondo rosa muy claro */
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  width: 90%;
+  text-align: center;
+  align-self: center;
+  margin: 0.5rem auto; 
+}

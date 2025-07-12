@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 import "../styles/nav.css";
+import { CartContext, CartProvider } from "../contexts/CartContext";
+import { useAuthContext } from "../contexts/AuthContext";
 
-function Nav({position1,link1,position2,link2,position3,link3,position4,link4,position5,link5,position6,link6,position7,link7,position8,link8,position9,link9,productsCart}) {
+function Nav() {
+    const {productsCart} = useContext(CartContext);
+    const {user} = useAuthContext();
+    const isAdmin = user?.email?.includes("@admin");
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light" id="nav">
             <div className="container-fluid">
@@ -14,31 +20,33 @@ function Nav({position1,link1,position2,link2,position3,link3,position4,link4,po
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link1}>{position1}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/">Inicio</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link2}>{position2}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Products">Catálogo</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link3}>{position3}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/About">Nosotros</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link4}>{position4}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Reviews">Reseñas</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link5}>{position5}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Contact">Contacto</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link6}>{position6}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Where">Ubicación</NavLink>
                   </li>
+                  {isAdmin && (
+                    <li className="nav-item">
+                        <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Admin/productsForm">Admin</NavLink>
+                    </li>
+                  )}
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link7}>{position7}</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Login">Login</NavLink>
                   </li> 
                   <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link8}>{position8}</NavLink>
-                  </li> 
-                  <li className="nav-item">
-                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={link9}>{position9} <span>{productsCart.length > 0 ? productsCart.reduce((total, product) => total + product.quantity, 0)
+                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/Cart">Carrito<span>{productsCart.length > 0 ? productsCart.reduce((total, product) => total + product.quantity, 0)
     : ""}</span></NavLink></li> 
                  
                 </ul>
