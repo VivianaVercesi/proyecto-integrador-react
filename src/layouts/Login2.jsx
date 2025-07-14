@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthContext } from '../contexts/AuthContext';
-import { createUser, loginEmailPass } from '../auth/firebase';
+import { useAuthContext } from '../contexts/AuthContext.jsx';
+import { createUser, loginEmailPass } from '../auth/firebase.js';
 import { dispararSweetBasico } from '../assets/sweetAlert.js';
 import "../styles/login.css";
 

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/cartCard.css";
 
 function CartCard({product, functionCart}) {
-    
+           
     function deleteFromCart() {
         console.log("paso 1")
         functionCart(product.id)

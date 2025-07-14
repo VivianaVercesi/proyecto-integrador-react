@@ -2,7 +2,7 @@
 
 /*Estilo del nombre*/
 #trademark {
-    font-family: 'Oleo Script', cursive;
+    /*font-family: 'Oleo Script', cursive;
     font-weight: 100;
     font-style: normal;
     color: rgb(74, 57, 77);
@@ -11,9 +11,20 @@
     text-align: center; 
     z-index: 1; 
     margin-top: 8rem;
+    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);*/
+    font-family: 'Oleo Script', cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(74, 57, 77);
+    font-size: 6.5rem;
+    padding-top: 2rem;
+    text-align: center;
     text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+    margin: 8rem auto 0 auto;
+    max-width: 90%;
+    width: 100%;
 }
-.trademark {
+/*.trademark {
     font: italic;
     width: 100%;
     text-align: center;
@@ -21,4 +32,18 @@
     margin: 0 auto;
     text-align: center;
     font-size: 7rem;
+}*/
+
+@media (max-width: 768px) {
+    #trademark {
+        font-size: 4.5rem;
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #trademark {
+        font-size: 3.5rem;
+        margin-top: 5rem;
+    }
 }

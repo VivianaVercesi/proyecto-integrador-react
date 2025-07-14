@@ -18,26 +18,28 @@
   position: relative;
   z-index: 2;
   background: rgb(123, 98, 126, 0.9); /* semitransparente */
-  padding: 2rem 3rem;
+  padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4rem;
+
 }
 
 /* Título */
 .products-form-card h2 {
-  margin: 2rem 0;
+  margin: 1rem 0;
   color: whitesmoke;
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .products-form-card label {
-  margin-top: 1.2rem;
-  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
   
   color: rgb(38, 10, 44);
 }
@@ -46,30 +48,40 @@
 .products-form-card input,
 .products-form-card textarea {
   color: rgb(74, 57, 77);
-  font-size: 1.5rem;
+  font-size: 1rem;
   width: 90%;
   border-radius: 20px;
   font-weight: bolder;
-  margin-top: 1.5rem;
-  padding: 1rem;
+  margin-top: 1rem;
+  padding: 0.7rem;
   background-color: whitesmoke;
   border: none;
+  font-size: 1rem;
+
+  font-weight: normal;
+  
+  
   
 }
 
 /* Botón */
 .products-form-card .products-submit-btn{
-  font-size: 2rem !important;
-  font-weight: bolder;
-  padding: 0.9rem 0.6rem;
-  margin: 2rem 0 0;
+  font-size: 1.1rem !important;
+  font-weight: bold;
+  padding: 0.6rem;
+  
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 90%;
   border: solid rgb(210, 190, 213);
   color: rgb(38, 10, 44);
-  border-radius: 2px;
+  border-radius: 6px;
   background-color: transparent;
+
+  
+  margin: 2rem 0 0;
+  
+ 
 }
 
 .products-submit-btn:hover {
@@ -82,7 +94,7 @@
   color: #4e0e3eff;
   background-color: #fff0f5; /* Fondo rosa muy claro */
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   margin-top: 0.5rem;
@@ -90,4 +102,56 @@
   text-align: center;
   align-self: center;
   margin: 0.5rem auto; 
+}
+
+@media (max-width: 768px) {
+  .products-form-card {
+    width: 75%;
+    padding: 1rem 1.5rem;
+  }
+
+  .products-form-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .products-form-card label,
+  .products-form-card input,
+  .products-form-card textarea,
+  .products-submit-btn {
+    font-size: 0.95rem;
+  }
+
+  .error {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-form-container {
+    padding: 1rem;
+    height: auto;
+    
+  }
+
+  .products-form-card {
+    width: 90%;
+    padding: 1rem;
+    margin:1.5rem 0rem;
+  }
+
+  .products-form-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .products-form-card label,
+  .products-form-card input,
+  .products-form-card textarea,
+  .products-submit-btn {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .error {
+    font-size: 0.8rem;
+  }
 }

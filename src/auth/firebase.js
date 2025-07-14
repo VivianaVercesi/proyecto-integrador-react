@@ -2,27 +2,28 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword  } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, getDocs, addDoc, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Configuración del proyecto Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDB3FkNKRJ2-yjOzP52MtpTYDZ05Zt7oXQ",
-  authDomain: "pruebaauth-c4b03.firebaseapp.com",
-  projectId: "pruebaauth-c4b03",
-  storageBucket: "pruebaauth-c4b03.firebasestorage.app",
-  messagingSenderId: "778599847752",
-  appId: "1:778599847752:web:cf7f0a8e6af0d3a078057d",
-  measurementId: "G-L1YD8Y54GY"
+   apiKey: "AIzaSyBV9QaCR7zTwC7JgftEPXVYhzsX1JG7cgk",
+  authDomain: "e-commerce-d0b9a.firebaseapp.com",
+  projectId: "e-commerce-d0b9a",
+  storageBucket: "e-commerce-d0b9a.firebasestorage.app",
+  messagingSenderId: "519978888680",
+  appId: "1:519978888680:web:21debb8091de427d32885d",
+  measurementId: "G-3YHFEXFHG4"
 };
 
-// Initialize Firebase
+// Initializar Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
 const auth = getAuth();
 
+// Inicializar Firestore
+const db = getFirestore(app); //Este es el acceso a la base de datos
+
+// Función para crear usuarios
 export function createUser(email, password ) {
     return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -39,6 +40,7 @@ export function createUser(email, password ) {
     });
 }
  
+// Función para iniciar sesión
 export function loginEmailPass(email, password) {
   return signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => userCredential.user)
@@ -56,3 +58,4 @@ export function loginEmailPass(email, password) {
 }
 
    
+export { db, collection, getDocs, addDoc, doc, getDoc, updateDoc, deleteDoc };

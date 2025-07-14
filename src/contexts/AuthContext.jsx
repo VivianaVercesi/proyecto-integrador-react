@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 // Crear el contexto de autenticación
 const AuthContext = createContext();
@@ -27,6 +27,17 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('authToken');
     setUser(null);
   };
+
+ useEffect(() => {
+    // Verificar si hay token en localStorage y mantener usuario logueado
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      // En tu caso, token es solo un string simulado, podrías guardar más info en localStorage si quieres
+      // Aquí, como ejemplo simple, solo establecemos que hay usuario logueado sin detalles
+      setUser({ email: token.replace('fake-token-', ''), uid: 'uid-placeholder' });
+    }
+  }, []);
+
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>

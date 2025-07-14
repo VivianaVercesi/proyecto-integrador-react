@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import "../styles/productContainer.css";
+import { useProductsContext } from "../contexts/ProductsContext";
 
-function ProductContainer({functionCart}) {
-    const [products, setProducts] = useState([]);
+function ProductContainer() {
+    const {products, listProducts} = useProductsContext();
+    //const [productsComponent, setProductsComponent] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("https://682bb114d29df7a95be42521.mockapi.io/vestidos")
-            .then((respuesta) => respuesta.json())
-            .then((datos) => {
-                console.log("Datos obtenidos:", datos); 
-                setProducts(datos);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.log("Error:", error);
-                setError("Hubo un problema al cargar los productos.");
-                setLoading(false);
-            });
+        listProducts().then((products) => {
+            setLoading(false); 
+        }).catch((error) => {
+            setError('Hubo un problema al cargar los productos.');
+            setLoading(false);
+        })
     }, []);
 
     if (loading) {

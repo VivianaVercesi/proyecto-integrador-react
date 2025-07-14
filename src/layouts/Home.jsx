@@ -1,16 +1,17 @@
 import React from "react";
 import Nav from "../components/Nav";
-import Title from "../components/Title";
+import Trademark from "../components/Title";
 import Phrase from "../components/Phrase";
 import Button from "../components/Button";
 import "../styles/home.css";
+
 
 
 function Home() {
     return(
         <div className="body">
             <header>
-                <Title
+                <Trademark
                     trademark="El Atellier de Ana"
                 />
             </header>
@@ -20,10 +21,7 @@ function Home() {
                 <Phrase
                     text='"Cada prenda cuenta una historia, descubre la tuya."'
                 />
-                <Button
-                    Link2="/Products"
-                    text="Ingresar"
-                />
+                
             </main>
             <footer>
                 <h1> &copy; 2025 - Mi app React </h1>

@@ -1,38 +1,40 @@
 import React, { useState } from 'react';
-import { agregarProducto } from '../assets/request';
-import "../styles/productForm.css";
+import "../styles/productsForm.css";
 import { dispararSweetBasico } from '../assets/sweetAlert';
+import { useProductsContext } from '../contexts/ProductsContext';
+import { useNavigate } from "react-router-dom";
 
 function ProductsForm() {
+  const {addProduct} = useProductsContext();
   const [product, setProduct] = useState({
     name: '',
     image:'',
     price: 0,
     description: '',
   });
-
+  const navigate = useNavigate();
   const [errores, setErrores] = useState({});
 
-  const validarFormulario = () => {
-    const nuevosErrores = {};
+  const validateForm = () => {
+    const newErrors = {};
 
     if (!product.name.trim()) {
-      nuevosErrores.name = 'El nombre es obligatorio.';
+      newErrors.name = 'El nombre es obligatorio.';
     }
     if (!product.image.trim()) {
-      nuevosErrores.image = 'La URL de la imagen es obligatoria.';
+      newErrors.image = 'La URL de la imagen es obligatoria.';
     }
 
     if (!product.price || parseFloat(product.price) <= 0) {
-      nuevosErrores.price = 'El precio debe ser mayor a 0.';
+      newErrors.price = 'El precio debe ser mayor a 0.';
     }
 
     if (!product.description.trim() || product.description.length < 10) {
-      nuevosErrores.description = 'La descripción debe tener al menos 10 caracteres.';
+      newErrors.description = 'La descripción debe tener al menos 10 caracteres.';
     }
 
-    setErrores(nuevosErrores);
-    return Object.keys(nuevosErrores).length === 0;
+    setErrores(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (e) => {
@@ -43,9 +45,9 @@ function ProductsForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!validarFormulario()) return;
+    if (!validateForm()) return;
 
-    agregarProducto(product)
+    addProduct(product)
       .then(() => {
         setProduct({ name: '',image: '', price: 0, description: '' });
         setErrores({});
@@ -55,6 +57,7 @@ function ProductsForm() {
           "success",
           "Aceptar"
         );
+         navigate("/products");
       })
       .catch((error) => {
         dispararSweetBasico(

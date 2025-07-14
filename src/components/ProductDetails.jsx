@@ -1,50 +1,77 @@
 import { useContext, useEffect, useState } from "react";
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { useParams,Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "../styles/productDetails.css";
-import { dispararSweetBasico } from '../assets/sweetAlert';
+import { dispararSweetBasico } from "../assets/sweetAlert";
 import { CartContext } from "../contexts/CartContext";
+import { useAuthContext } from "../contexts/AuthContext";
+import { useProductsContext } from "../contexts/ProductsContext";
 
-function ProductDetails({}) {
-  const {addToCart} = useContext(CartContext);
+function ProductDetails() {
+  const { addToCart } = useContext(CartContext);
+  const { foundProduct, getProduct, deleteProduct } = useProductsContext();
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  console.log(id)
+  const { user } = useAuthContext();
+  const isAdmin = user?.email?.includes("@admin");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://682bb114d29df7a95be42521.mockapi.io/vestidos")
-      .then((res) => res.json())
-      .then((datos) => {
-        const productoEncontrado = datos.find((item) => String(item.id) === String(id));
-        if (productoEncontrado) {
-          setProduct(productoEncontrado);
-          console.log("Producto encontrado:", productoEncontrado); 
-        } else {
+    getProduct(id)
+      .then(() => setLoading(false))
+      .catch((error) => {
+        if (error === "Producto no encontrado.") {
           setError("Producto no encontrado.");
+        } else {
+          setError("Hubo un error al obtener el producto.");
         }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log("Error:", err);
-        setError("Hubo un error al obtener el producto.");
         setLoading(false);
       });
   }, [id]);
 
-  useEffect(() => {
-  if (product) {
-    console.log("Producto actualizado:", product); // ✅ Esto confirma que se actualizó
-  }
-}, [product]);
+  const handleDelete = () => {
+  dispararSweetBasico(
+    "Eliminar producto",
+    "¿Estás seguro que querés eliminar este producto?",
+    "warning",
+    "Eliminar",
+    "Cancelar"
+  ).then((result) => {
+    if (result.isConfirmed) {
+      deleteProduct(foundProduct.id)
+        .then(() => {
+          dispararSweetBasico(
+            "Producto eliminado",
+            "El producto fue eliminado con éxito.",
+            "success",
+            "Aceptar"
+          ).then(() => {
+            navigate("/products");
+          });
+        })
+        .catch(() => {
+          dispararSweetBasico(
+            "Error",
+            "No se pudo eliminar el producto.",
+            "error",
+            "Cerrar"
+          );
+        });
+    }
+  });
+};
+
 
   function functionCart() {
     if (quantity < 1) return;
-    dispararSweetBasico("Producto Agregado", "El producto fue agregado al carrito con éxito", "success", "Cerrar");
-    addToCart({ ...product, quantity });
+    dispararSweetBasico(
+      "Producto Agregado",
+      "El producto fue agregado al carrito con éxito",
+      "success",
+      "Cerrar"
+    );
+    addToCart({ ...foundProduct, quantity });
   }
 
   function increaseCounter() {
@@ -57,27 +84,50 @@ function ProductDetails({}) {
 
   if (loading) return <p>Cargando producto...</p>;
   if (error) return <p>{error}</p>;
-  if (!product) return null;
+  if (!foundProduct) return null;
 
   return (
     <div className="detail-container">
       <div className="detail-card">
-            <img className="detail-image" src={`/images/${product.name}.jpg`} alt={product.name} />
-            <div className="detail-details">
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <p>$ {product.price} </p>
-              <div className="detail-counter">
-                <button onClick={decreaseCounter}>-</button>
-                <span>{quantity}</span>
-                <button onClick={increaseCounter}>+</button>
-              </div>
-              <button onClick={functionCart}>Agregar al carrito</button>
-              
-            </div>
+        <img
+          className="detail-image"
+          src={`/images/${foundProduct.name}.jpg`}
+          alt={foundProduct.name}
+        />
+        <div className="detail-details">
+          <h2>{foundProduct.name}</h2>
+          <p>{foundProduct.description}</p>
+          <p>$ {foundProduct.price}</p>
+          <div className="detail-counter">
+            <button onClick={decreaseCounter}>-</button>
+            <span>{quantity}</span>
+            <button onClick={increaseCounter}>+</button>
+          </div>
+
+          {isAdmin ? (
+            <>
+              <Link
+                to={`/EditProducts/${foundProduct.id}`}
+                className="action-btn"
+              >
+                Editar producto
+              </Link>
+              <button
+                onClick={handleDelete}
+                className="action-btn "
+                
+              >
+                Eliminar producto
+              </button>
+            </>
+          ) : (
+            <button onClick={functionCart} className="action-btn">
+              Agregar al carrito
+            </button>
+          )}
         </div>
+      </div>
     </div>
-    
   );
 }
 

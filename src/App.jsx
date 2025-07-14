@@ -10,9 +10,10 @@ import Reviews from './layouts/Reviews';
 import Contact from './layouts/Contact';
 import Where from './layouts/Where';
 import Cart from './layouts/Cart';
-import Admin from './components/Admin';
-import Login2 from './components/Login2';
+import Login2 from './layouts/Login2';
 import ProductsForm from './components/ProductsForm';
+import EditProducts from './components/EditProducts';
+import AdminPanel from './layouts/AdminPanel';
 
 import './App.css';
 //import Cart from './assets/layouts/Cart';
@@ -45,9 +46,13 @@ function App() {
               /*setProductsCart={setProductsCart}
               deleteFromCart={handleDelete}*/
               /> }/> 
-          <Route path='/admin' element={<Admin/>} />
+          
           <Route path='/admin/productsForm' element={<ProductsForm/>} />
           <Route path="/productDetails/:id" element={<ProductDetails/>} />
+          <Route path="/editProducts/:id" element={<EditProducts/>} />
+          <Route path="/adminPanel" element={<AdminPanel/>} />
+          {/*<Route path="/admin/editProducts/" element={<EditProducts />} />*/}
+
         </Routes>
       </>
                  

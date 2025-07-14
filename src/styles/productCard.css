@@ -1,88 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap");
 
 .product-card {
-    margin: 2rem 2rem;
-    border: rgb(130, 99, 134) solid;
-    border-radius: 15px;
-    background-color: #f4daf2;
-    max-width: 90%;
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 250px;
-    margin: 10px;
-    box-sizing: border-box;
-    
+  margin: 2rem 2rem;
+  border: rgb(130, 99, 134) solid;
+  border-radius: 15px;
+  background-color: #f4daf2;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  width: 15rem;
+  margin: 0.5rem;
+  box-sizing: border-box;
 }
-  
 
-.product-image{
-    display: block;
-    margin: 2rem auto;
-    size: 80%;
-    max-width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 10px 10px 0px 0px;
-    object-fit: cover;
-    width: 80%;
-  }
+.product-image {
+  display: block;
+  margin: 1rem auto;
+  size: 80%;
+  max-width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  width: 80%;
+}
 
-  .product-image:hover {
-    transform: scale(1.8, 1.8);
-  }
+.product-image:hover {
+  transform: scale(1.8, 1.8);
+}
 
-.title {
-    font-family: "Oleo Script", cursive;
-    color: rgb(74, 57, 77);
-    font-size: 2rem;
-    text-align: center;
-    padding-top: 5rem;
+.cardTitle {
+  font-family: "Oleo Script", cursive;
+  color: rgb(74, 57, 77);
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .product-details h2 {
-    color: rgb(74, 57, 77);
-    font-size: 1.1rem;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1rem;
-    font-style: italic;
+  color: rgb(74, 57, 77);
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-style: italic;
 }
 
 #color1 {
-    background-color: rgb(241, 139, 209);
-    color: white;
+  background-color: rgb(241, 139, 209);
+  color: white;
 }
 #color2 {
-    background-color: rgb(176, 133, 181); 
-    color: white;
+  background-color: rgb(176, 133, 181);
+  color: white;
 }
 #color3 {
-    background-color: rgb(81, 21, 95); 
-    color: white;
+  background-color: rgb(81, 21, 95);
+  color: white;
 }
 #color4 {
-    background-color: rgb(128, 177, 233); 
-    color: white;
+  background-color: rgb(128, 177, 233);
+  color: white;
 }
 #color5 {
-    background-color: rgb(28, 55, 131); 
-    color: white;
+  background-color: rgb(28, 55, 131);
+  color: white;
 }
 #color6 {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 #color7 {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
-.product-details button {
-    display: inline-block;
-    padding: 0.5rem 0.6rem;
-    border: solid rgb(130, 99, 134);
-    color: rgb(89, 66, 92);
-    text-decoration: none;
-    border-radius: 20px;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bolder;
- }
+.product-details .btn-in {
+  display: inline-block;
+  padding: 0.5rem 0.6rem;
+  border: solid rgb(130, 99, 134);
+  color: rgb(89, 66, 92);
+  text-decoration: none;
+  border-radius: 20px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+}

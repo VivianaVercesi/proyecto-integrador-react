@@ -110,7 +110,7 @@
     background-color: white;
     color: black;
 }
-.detail-details button {
+.detail-details .action-btn {
     display: inline-block;
     padding: 0.5rem 0.6rem;
     border: solid rgb(130, 99, 134);
@@ -121,16 +121,8 @@
     font-size: 1.2rem;
     font-weight: bolder;
 
-  padding: 0.8rem 1.2rem;
-  font-size: 1.2rem;
-  background-color: rgb(130, 99, 134);
-  color: white;
-  border: none;
-  border-radius: 0.625rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
     }
-    .detail-details > button:hover {
+  .detail-details .action-btn:hover {
   background-color: rgb(100, 75, 105);
+  color: whitesmoke;
 }

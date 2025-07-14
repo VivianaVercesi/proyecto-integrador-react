@@ -1,24 +1,57 @@
 /*Estilo de la lista de productos*/
-html, header .title {
-    font-size: 0.7rem;
-    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
-    margin-bottom: 2rem;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.titleCat {
+  font-family: "Oleo Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(74, 57, 77);
+  font-size: 5rem;
+  padding-top: 1rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+  margin: 5rem auto 0 auto;
+  max-width: 90%;
+  width: 100%;
+}
 
 #product-container {
   display: flex;
-  flex-direction: column; /* puede ser cambiado a row si se necesita */
-  flex-wrap: wrap; /* se aplica solo si flex-direction es row o column */
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-bottom: 5rem;
-  margin-top: 130rem;
+  padding: 2rem 1rem;
+  margin-top: 0; /* Antes tenía 130rem */
+  width: 100%;
   box-sizing: border-box;
-  position: static;
-  height: auto;
-  overflow: visible;   
 }
 
+/* Contenedor de tarjetas */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
 
+/* Responsive: dispositivos pequeños */
+@media (max-width: 768px) {
+  .titleCat {
+    font-size: 3.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleCat {
+    font-size: 1.9rem !important;
+  }
+}

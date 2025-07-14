@@ -1,48 +1,101 @@
 /*Estilo de la sección contacto*/
 #contact {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     margin-top: 5rem;
     padding: 4rem 2rem;
     max-width: 100%;
     width: 100vw;
+    box-sizing: border-box;
 }
-#contact label, input {
+
+#contact form {
+    width: 60%;
+    max-width: 40rem;
+    min-width: 17.5rem;
+}
+
+#contact label,
+input,
+.btn-in {
     color: rgb(74, 57, 77);
-    font-size: 1.3rem;
-    width: 100%; 
+    font-size: 1.5rem;
+    width: 100%;
     font-weight: bolder;
     border-radius: 10px;
+    color: rgb(74, 57, 77);
+
+    margin-top: 1rem;
+    box-sizing: border-box;
 }
+
 #contact textarea {
     width: 100%;
     box-sizing: border-box;
     margin: 1rem 0;
     border-radius: 10px;
+
 }
+
+#contact textarea::placeholder {
+    font-size: 1.4rem;
+}
+
 #contact .btn-in {
-   display: block;
-   margin: 1rem auto;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.5rem;
 }
+
 #error-form {
     color: rgb(177, 16, 16);
-    list-style-type: none; 
+    list-style-type: none;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: left;
 }
 
-#contact form{
-        width: 60%;
+
+/* Tablets */
+@media (max-width: 768px) {
+    #contact form {
+        width: 80%;
     }
-    #contact label, input, .btn-in {
-        font-size: 1.7rem;
+
+    #contact label,
+    #contact input,
+    #contact .btn-in {
+        font-size: 1.2rem;
     }
-    #contact textarea::placeholder{
-        font-size: 1.7rem;
+
+    #contact textarea::placeholder {
+        font-size: 1.1rem;
     }
+
     #error-form {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    #contact form {
+        width: 95%;
+    }
+
+    #contact label,
+    #contact input,
+    #contact .btn-in {
+        font-size: 1rem;
+    }
+
+    #contact textarea::placeholder {
+        font-size: 1rem;
+    }
+
+    #error-form {
+        font-size: 0.9rem;
+    }
+}

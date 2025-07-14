@@ -1,18 +1,15 @@
 import React from "react";
 import Nav from "../components/Nav";
-import Title from "../components/Title";
+/*import Title from "../components/Title";*/
 import ProductContainer from "../components/ProductContainer";
 import "../styles/products.css";
 
 function Products() { 
     return(
         <div>
-            <header>
-                <Title
-                    trademark="Vestidos para Soñar"
-                />
-               
-            </header>
+             <header className="about">
+                    <h1 className="titleCat">Vestidos para Soñar</h1>               
+                </header>
             <main className="container">
                 
                 <section id="catalogo">

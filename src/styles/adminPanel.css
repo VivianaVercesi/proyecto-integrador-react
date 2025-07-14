@@ -1,0 +1,90 @@
+.admin-panel-container {
+  background: url('../assets/images/image1.webp') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  
+}
+
+.admin-panel-container h2 {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 100;
+    font-style: normal;
+    color: #3a333e;
+    font-size: 6rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+    padding: 4rem;
+  
+}
+
+.admin-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 60%;
+  max-width: 400px;
+  color: #3a333e;
+}
+
+.admin-buttons button {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid rgb(210, 190, 213);
+  background-color: rgba(255, 255, 255, 0.85);
+  color: rgb(38, 10, 44);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-buttons button:hover {
+  background-color: rgb(89, 66, 92);
+  color: whitesmoke;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .admin-panel-container h2 {
+    font-size: 3rem;
+    padding: 2rem;
+  }
+
+  .admin-buttons {
+    width: 80%;
+  }
+
+  .admin-buttons button {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .admin-panel-container {
+    padding: 1rem;
+  }
+
+  .admin-panel-container h2 {
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .admin-buttons {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .admin-buttons button {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+}

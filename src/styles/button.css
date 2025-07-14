@@ -1,4 +1,4 @@
-/*Estilo del botón de la página de inicio*/
+/*Estilo del botón*/
 .btn-in {
     display: inline-block;
     padding: 0.5rem 0.6rem;
@@ -15,4 +15,21 @@
 .btn-in:hover {
     background-color: rgb(89, 66, 92);
     color: whitesmoke;
+}
+/* Tablet (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .btn-in {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Celulares (pantallas menores a 480px) */
+@media (max-width: 480px) {
+  .btn-in {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
 }
