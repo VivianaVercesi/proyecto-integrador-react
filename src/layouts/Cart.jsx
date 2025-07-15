@@ -7,13 +7,14 @@ import "../styles/cart.css";
 import { CartContext } from "../contexts/CartContext";
 import { useAuthContext } from "../contexts/AuthContext";
 
+
 function Cart() {
   const {user} = useAuthContext(); 
-  const{productsCart,setProductsCart, emptyCart, deleteFromCart} = useContext(CartContext); 
+  const{productsCart,setProductsCart, emptyCart, deleteProductsFromCart} = useContext(CartContext); 
   console.log("Productos: " + productsCart)   
 
     function functionCart(id) {
-    deleteFromCart(id);
+    deleteProductsFromCart(id);
   }
 
   function increaseQuantity(id) {

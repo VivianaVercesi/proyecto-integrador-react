@@ -5,7 +5,7 @@ import Nav from './components/Nav';
 import Home from './layouts/Home';
 import Products from './layouts/Products';
 import ProductDetails from './components/ProductDetails';
-import About from './layouts/About';
+import AboutUs from "./layouts/AboutUs";
 import Reviews from './layouts/Reviews';
 import Contact from './layouts/Contact';
 import Where from './layouts/Where';
@@ -14,7 +14,8 @@ import Login2 from './layouts/Login2';
 import ProductsForm from './components/ProductsForm';
 import EditProducts from './components/EditProducts';
 import AdminPanel from './layouts/AdminPanel';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 //import Cart from './assets/layouts/Cart';
 //<Route path="/product/:id" element={<ProductDetails />}
@@ -38,7 +39,7 @@ function App() {
           <Route path="/login" element={<Login2/>}></Route>
           <Route path="/products" element={<Products/>}></Route>
           
-          <Route path="/about" element={<About/>}></Route>
+          <Route path="/aboutUs" element={<AboutUs/>}></Route>
           <Route path="/reviews" element={<Reviews/>}></Route>
           <Route path="/contact" element={<Contact/>}></Route>
           <Route path="/where" element={<Where/>}></Route>

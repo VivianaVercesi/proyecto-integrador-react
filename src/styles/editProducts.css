@@ -1,69 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
 
-.edit-form-container {
-  max-width: 60rem;
-  margin: 8rem auto;
-  padding: 2.5rem;
-  background-color: #f4daf2;
-  border: 0.125rem solid rgb(130, 99, 134);
-  border-radius: 1rem;
-  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+/* CONTENEDOR GENERAL */
+.products-form-container {
+  
+  background: url(../assets/images/image1.webp) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  position: relative;
+  padding-top: 5rem; 
+}
+
+/* TARJETA */
+.products-form-card {
+  background: rgba(123, 98, 126, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  color: #f4f4f4;
+}
+
+/* TÍTULO */
+.products-form-card h2 {
   font-family: "Oleo Script", cursive;
-  color: #4a394d;
-}
-
-.edit-form-container h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: rgb(74, 57, 77);
-}
-
-.edit-form-group {
   margin-bottom: 1.5rem;
+  color: whitesmoke;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.edit-form-group label {
+/* ETIQUETAS */
+.products-form-card label {
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
   display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: rgb(89, 66, 92);
 }
 
-.edit-form-group input,
-.edit-form-group textarea {
+/* INPUTS Y TEXTAREA */
+.products-form-card input,
+.products-form-card textarea {
   width: 100%;
-  padding: 0.7rem;
-  font-size: 1.2rem;
-  border: 0.0625rem solid #833f95;
-  border-radius: 0.625rem;
-  font-family: 'Bruno Ace SC', cursive;
-  background-color: #fff;
-  color: #333;
-}
-
-.edit-form-group textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: whitesmoke;
+  color: #4a394d;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
   resize: vertical;
-  min-height: 6rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
 }
 
-.edit-form-button {
+/* BOTÓN */
+.action-btn {
+  all: unset;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1rem;
   width: 100%;
-  padding: 0.8rem;
-  font-size: 1.5rem;
+  border-radius: 20px;
+  border: 2px solid rgb(100, 75, 105);
+  background-color: transparent;
+  color: rgb(38, 10, 44);
   font-weight: bold;
-  font-family: 'Bruno Ace SC', cursive;
-  color: white;
-  background-color: rgb(176, 133, 181); /* como #color2 */
-  border: 0.0625rem solid rgb(130, 99, 134);
-  border-radius: 0.625rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.edit-form-button:hover {
-  background-color: rgb(100, 75, 105); /* como hover en .action-btn */
+.action-btn:hover {
+  background-color: rgb(100, 75, 105);
   color: white;
 }
 
+
+/* ERRORES */
+.error {
+  background-color: #fff0f5;
+  color: #4e0e3e;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 0.4rem 0;
+}
+/* Toastify estilo personalizado */
+.Toastify__toast--success {
+  background: rgb(176, 133, 181);
+  color: white;
+  font-family: 'Oleo Script', cursive;
+  font-weight: bold;
+}
+
+.Toastify__toast--error {
+  background: #d9534f; /* rojo error */
+  color: white;
+  font-family: 'Oleo Script', cursive;
+  font-weight: bold;
+}
+
+.Toastify__toast {
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Toastify__progress-bar {
+  background: white;
+}
+
+/* Posición top-right, márgenes y padding */
+.Toastify__toast-container--top-right {
+  top: 3rem;
+  right: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .products-form-card {
+    padding: 1.5rem;
+     margin-top: 4rem;
+  }
+
+  .products-form-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .products-form-card input,
+  .products-form-card textarea {
+    font-size: 0.95rem;
+  }
+
+  .action-btn {
+    font-size: 0.95rem;
+  }
+
+  .error {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-form-card {
+    padding: 1rem;
+    margin-top: 4rem;
+  }
+
+  .products-form-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .products-form-card input,
+  .products-form-card textarea {
+    font-size: 0.9rem;
+  }
+
+  .action-btn {
+    font-size: 0.9rem;
+  }
+
+  .error {
+    font-size: 0.8rem;
+  }
+}
+
+ 

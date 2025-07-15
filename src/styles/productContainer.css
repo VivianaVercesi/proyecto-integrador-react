@@ -1,7 +1,7 @@
 .title {
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .products-container {
@@ -13,9 +13,8 @@
     text-align: center; /* Centra el texto dentro del párrafo */
     padding-bottom: 5rem; /* Ajusta el espacio entre el contenido y el borde inferior */
     box-sizing: border-box;
-    margin-top: 35rem; /* Bajamos mucho este margen */
-    width: 100%; /* Aseguramos que no desborde */
-    overflow-x: hidden; /* Evita scroll horizontal */
+    width: 100%;
+    overflow-x: hidden; 
 }
 
 
@@ -24,3 +23,46 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  /* Paginación */
+.pagination-btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  margin-left: 0.3rem;
+  border-radius: 6px;
+  border: 1.5px solid rgb(130, 99, 134);
+  background-color: transparent;
+  color: rgb(89, 66, 92);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: rgb(130, 99, 134);
+  color: white;
+}
+
+.pagination-btn.active {
+  background-color: rgb(89, 66, 92);
+  color: white;
+  border-color: rgb(89, 66, 92);
+}
+
+/* Filtros */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.filter-container input {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 200px;
+  max-width: 90%;
+}

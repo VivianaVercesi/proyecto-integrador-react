@@ -2,16 +2,17 @@
 
 /* CONTENEDOR GENERAL */
 .products-form-container {
-  all: unset;
+  
   background: url(../assets/images/image1.webp) no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
-  width: 80%;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1rem;
+  position: relative;
 }
 
 /* TARJETA */
@@ -77,6 +78,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .action-btn:hover {

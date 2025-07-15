@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword  } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, signInWithPopup  } from "firebase/auth";
 import { getFirestore, collection, getDocs, addDoc, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { GoogleAuthProvider } from "firebase/auth/web-extension";
 
 // Configuración del proyecto Firebase
 const firebaseConfig = {
@@ -18,7 +19,9 @@ const firebaseConfig = {
 // Initializar Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const provider = new GoogleAuthProvider;
 const auth = getAuth();
+
 
 // Inicializar Firestore
 const db = getFirestore(app); //Este es el acceso a la base de datos
@@ -40,6 +43,25 @@ export function createUser(email, password ) {
     });
 }
  
+auth.useDeviceLanguage()
+export function logearG(){
+  signInWithPopup(auth,provider)
+    .then((result) => {
+      console.log("test",result)
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      console.log("Credenciales G", credential)
+      const token = credential.accessToken;
+      const user = result.user;
+      console.log("User",user);
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+});
+  
+}
+
 // Función para iniciar sesión
 export function loginEmailPass(email, password) {
   return signInWithEmailAndPassword(auth, email, password)

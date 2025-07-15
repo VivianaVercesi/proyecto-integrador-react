@@ -26,11 +26,22 @@ export function CartProvider({ children }) {
     const emptyCart = () => {
         setProductsCart([]);
     };
-    function deleteProductsFromCart(id){
-        console.log(id)
-        const nuevoCarrito = productsCart.filter((p) => p.id !== id);
-        setProductsCart(nuevoCarrito);
-    }
+    function deleteProductsFromCart(id) {
+  setProductsCart((prevCart) => {
+    return prevCart.reduce((acc, product) => {
+      if (product.id === id) {
+        if (product.quantity > 1) {
+          // Si tiene más de una unidad, reducir cantidad en 1
+          acc.push({ ...product, quantity: product.quantity - 1 });
+        }
+        // Si solo tiene 1, no se añade (se elimina)
+      } else {
+        acc.push(product);
+      }
+      return acc;
+    }, []);
+  });
+}
 
     return (
         <CartContext.Provider value={{ productsCart, addToCart, emptyCart, deleteProductsFromCart }}>

@@ -47,20 +47,17 @@ function Login2() {
   };
 
   const signIn = async (e) => {
-  e.preventDefault();
-  if (!usuario || !password) {
-    dispararSweetBasico("Revisá los datos", "Completá todos los campos", "warning", "Ok");
-    return;
-  }
+    e.preventDefault();
+    if (!validarFormulario()) return; // Ahora usa la misma validación
 
-  try {
-    const user = await loginEmailPass(usuario, password);
-    login(user); // login del contexto
-    dispararSweetBasico("¡Bienvenido!", "Inicio de sesión exitoso", "success", "Continuar");
-  } catch (error) {
-    dispararSweetBasico("Error", error.message, "error", "Ok");
-  }
-};
+    try {
+      const user = await loginEmailPass(usuario, password);
+      login(user); // login del contexto
+      dispararSweetBasico("¡Bienvenido!", "Inicio de sesión exitoso", "success", "Continuar");
+    } catch (error) {
+      dispararSweetBasico("Error", error.message, "error", "Ok");
+    }
+  };
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -116,6 +113,8 @@ function Login2() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button className="login-btn" type="submit">Registrarse</button>
+              {/* Si querés implementar Google Login, agregalo aparte fuera del form o con botón no submit */}
+              {/* <button type="button" className="login-btn" onClick={logInGmail}>Iniciar sesión con Gmail</button> */}
             </form>
           )}
           <button className="login-btn" onClick={toggleForm}>

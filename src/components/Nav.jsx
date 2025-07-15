@@ -52,7 +52,7 @@ function Nav() {
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
-                to="/About"
+                to="/AboutUs"
               >
                 Nosotros
               </NavLink>

@@ -14,18 +14,22 @@ const ProductsContext = createContext();
 
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
+  const [originalProducts, setOriginalProducts] = useState([]);
   const [foundProduct, setFoundProduct] = useState({});
+  
+
 
   // Obtener todos los productos
   async function listProducts() {
     try {
       const querySnapshot = await getDocs(collection(db, 'vestidos'));
-      const productos = querySnapshot.docs.map((doc) => ({
+      const products = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setProducts(productos);
-      return productos;
+      setProducts(products);
+      setOriginalProducts(products)
+      return products;
     } catch (error) {
       console.error('Error al listar productos:', error);
       throw error;
@@ -100,6 +104,15 @@ async function deleteProduct(id) {
   }
 }
 
+function filterProductsByPrice(minPrice = 0, maxPrice = Infinity) {
+  const filteredProducts = originalProducts.filter((product) => {
+    const price = parseFloat(product.price);
+    return price >= minPrice && price <= maxPrice;
+  });
+
+  setProducts(filteredProducts);
+}
+
   return (
     <ProductsContext.Provider
       value={{
@@ -109,7 +122,8 @@ async function deleteProduct(id) {
         getProduct,
         foundProduct,
         editProduct,
-        deleteProduct
+        deleteProduct,
+        filterProductsByPrice
       }}
     >
       {children}
