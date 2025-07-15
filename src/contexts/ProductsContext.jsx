@@ -73,8 +73,8 @@ export function ProductsProvider({ children }) {
         price: product.price,
         description: product.description,
         image: product.image,
-        review: product.review,
-        reviewAuthor: product.reviewAuthor,
+        //review: product.review,
+        //reviewAuthor: product.reviewAuthor,
       });
 
       const updated = { ...product };

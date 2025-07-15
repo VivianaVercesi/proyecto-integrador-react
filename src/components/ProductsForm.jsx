@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import "../styles/productsForm.css";
 import { dispararSweetBasico } from '../assets/sweetAlert';
 import { useProductsContext } from '../contexts/ProductsContext';
 import { useNavigate } from "react-router-dom";
+import "../styles/productsForm.css";
 
 function ProductsForm() {
-  const {addProduct} = useProductsContext();
+  const { addProduct } = useProductsContext();
   const [product, setProduct] = useState({
-    name: '',
-    image:'',
+    name: "",
+    image: "",
     price: 0,
-    description: '',
+    description: "",
   });
   const navigate = useNavigate();
   const [errores, setErrores] = useState({});
@@ -19,18 +19,19 @@ function ProductsForm() {
     const newErrors = {};
 
     if (!product.name.trim()) {
-      newErrors.name = 'El nombre es obligatorio.';
+      newErrors.name = "El nombre es obligatorio.";
     }
     if (!product.image.trim()) {
-      newErrors.image = 'La URL de la imagen es obligatoria.';
+      newErrors.image = "La URL de la imagen es obligatoria.";
     }
 
     if (!product.price || parseFloat(product.price) <= 0) {
-      newErrors.price = 'El precio debe ser mayor a 0.';
+      newErrors.price = "El precio debe ser mayor a 0.";
     }
 
     if (!product.description.trim() || product.description.length < 10) {
-      newErrors.description = 'La descripción debe tener al menos 10 caracteres.';
+      newErrors.description =
+        "La descripción debe tener al menos 10 caracteres.";
     }
 
     setErrores(newErrors);
@@ -49,7 +50,7 @@ function ProductsForm() {
 
     addProduct(product)
       .then(() => {
-        setProduct({ name: '',image: '', price: 0, description: '' });
+        setProduct({ name: "", image: "", price: 0, description: "" });
         setErrores({});
         dispararSweetBasico(
           "Producto agregado",
@@ -57,7 +58,7 @@ function ProductsForm() {
           "success",
           "Aceptar"
         );
-         navigate("/products");
+        navigate("/products");
       })
       .catch((error) => {
         dispararSweetBasico(
@@ -115,10 +116,14 @@ function ProductsForm() {
             value={product.description}
             onChange={handleChange}
           />
-          {errores.description && <p className="error">{errores.description}</p>}
+          {errores.description && (
+            <p className="error">{errores.description}</p>
+          )}
         </div>
 
-        <button type="submit" className="products-submit-btn">Agregar Producto</button>
+        <button type="submit" className="action-btn">
+          Agregar Producto
+        </button>
       </div>
     </form>
   );

@@ -1,123 +1,117 @@
-/* Fondo general con imagen */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+
+/* CONTENEDOR GENERAL */
 .products-form-container {
+  all: unset;
   background: url(../assets/images/image1.webp) no-repeat center center fixed;
   background-size: cover;
-  margin: 2rem auto;
-  height: 100vh;
-  width: 90vw;
+  min-height: 100vh;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
-  z-index: 0;
+  padding: 1rem;
 }
 
-/* Contenedor del formulario */
+/* TARJETA */
 .products-form-card {
-  position: relative;
-  z-index: 2;
-  background: rgb(123, 98, 126, 0.9); /* semitransparente */
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
+  background: rgba(123, 98, 126, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 40%;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
-
+  font-style: normal;
+  color: #f4f4f4;
 }
 
-/* Título */
+/* TÍTULO */
 .products-form-card h2 {
-  margin: 1rem 0;
+  font-family: "Oleo Script", cursive;
+  margin-bottom: 1.5rem;
   color: whitesmoke;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
+/* ETIQUETAS */
 .products-form-card label {
+  color: #ffffff;
+  font-weight: bold;
   margin-top: 1rem;
-  font-size: 1rem;
-  
-  color: rgb(38, 10, 44);
+  margin-bottom: 0.3rem;
+  display: block;
 }
 
-/* Inputs y textarea */
+/* INPUTS Y TEXTAREA */
 .products-form-card input,
 .products-form-card textarea {
-  color: rgb(74, 57, 77);
-  font-size: 1rem;
-  width: 90%;
+  width: 100%;
+  padding: 0.75rem 1rem;
   border-radius: 20px;
-  font-weight: bolder;
-  margin-top: 1rem;
-  padding: 0.7rem;
-  background-color: whitesmoke;
   border: none;
+  background-color: whitesmoke;
+  color: #4a394d;
   font-size: 1rem;
-
+  font-family: inherit;
+  box-sizing: border-box;
+  resize: vertical;
   font-weight: normal;
-  
-  
-  
+  margin-bottom: 0.5rem;
 }
 
-/* Botón */
-.products-form-card .products-submit-btn{
-  font-size: 1.1rem !important;
-  font-weight: bold;
-  padding: 0.6rem;
-  
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 90%;
-  border: solid rgb(210, 190, 213);
-  color: rgb(38, 10, 44);
-  border-radius: 6px;
+/* BOTÓN */
+.action-btn {
+  all: unset;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid rgb(100, 75, 105);
   background-color: transparent;
-
-  
-  margin: 2rem 0 0;
-  
- 
+  color: rgb(38, 10, 44);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.products-submit-btn:hover {
-  background-color: rgb(89, 66, 92);
-  color: whitesmoke;
+.action-btn:hover {
+  background-color: rgb(100, 75, 105);
+  color: white;
 }
 
-/* Mensajes de error */
+/* ERRORES */
 .error {
-  color: #4e0e3eff;
-  background-color: #fff0f5; /* Fondo rosa muy claro */
+  background-color: #fff0f5;
+  color: #4e0e3e;
   font-weight: bold;
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
-  margin-top: 0.5rem;
-  width: 90%;
+  border-radius: 12px;
   text-align: center;
-  align-self: center;
-  margin: 0.5rem auto; 
+  margin: 0.4rem 0;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .products-form-card {
-    width: 75%;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
   }
 
   .products-form-card h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
-  .products-form-card label,
   .products-form-card input,
-  .products-form-card textarea,
-  .products-submit-btn {
+  .products-form-card textarea {
+    font-size: 0.95rem;
+  }
+
+  .action-btn {
     font-size: 0.95rem;
   }
 
@@ -127,31 +121,26 @@
 }
 
 @media (max-width: 480px) {
-  .products-form-container {
-    padding: 1rem;
-    height: auto;
-    
-  }
-
   .products-form-card {
-    width: 90%;
     padding: 1rem;
-    margin:1.5rem 0rem;
+    margin: 2rem 0;
   }
 
   .products-form-card h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
-  .products-form-card label,
   .products-form-card input,
-  .products-form-card textarea,
-  .products-submit-btn {
-    font-size: 0.85rem;
-    width: 100%;
+  .products-form-card textarea {
+    font-size: 0.9rem;
+  }
+
+  .action-btn {
+    font-size: 0.9rem;
   }
 
   .error {
     font-size: 0.8rem;
   }
 }
+
