@@ -17,16 +17,7 @@ import AdminPanel from './layouts/AdminPanel';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-//import Cart from './assets/layouts/Cart';
-//<Route path="/product/:id" element={<ProductDetails />}
 function App() {
-
- 
-  /*function handleDelete(id) {
-    const updatedCart = productsCart.filter(product => product.id !== id);
-    setProductsCart(updatedCart);
-  }*/
-
 
    return (
     <Router>
@@ -35,25 +26,17 @@ function App() {
         <Nav/>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          {/*<Route path='/login' element={<Login user={loggedInUser} admin={loggedInAdmin} setLoggedInAdmin={manejarAdmin} setLoggedInUser={manejarUser}/>}/>*/}
           <Route path="/login" element={<Login2/>}></Route>
           <Route path="/products" element={<Products/>}></Route>
-          
           <Route path="/aboutUs" element={<AboutUs/>}></Route>
           <Route path="/reviews" element={<Reviews/>}></Route>
           <Route path="/contact" element={<Contact/>}></Route>
           <Route path="/where" element={<Where/>}></Route>
-          <Route path="/cart" element={<Cart  
-              /*setProductsCart={setProductsCart}
-              deleteFromCart={handleDelete}*/
-              /> }/> 
-          
+          <Route path="/cart" element={<Cart/> }/>   
           <Route path='/admin/productsForm' element={<ProductsForm/>} />
           <Route path="/productDetails/:id" element={<ProductDetails/>} />
           <Route path="/editProducts/:id" element={<EditProducts/>} />
           <Route path="/adminPanel" element={<AdminPanel/>} />
-          {/*<Route path="/admin/editProducts/" element={<EditProducts />} />*/}
-
         </Routes>
       </>
                  

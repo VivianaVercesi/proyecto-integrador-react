@@ -57,6 +57,7 @@
     text-align: center;
     padding: 0 1rem;
 }
+
 .cart-title {
     font-family: "Oleo Script", cursive;
     color: rgb(74, 57, 77);
@@ -67,7 +68,7 @@
 
 .cart-image:hover {
     transform: scale(1.8, 1.8);
-  }
+}
 
 .btn-cart {
     display: inline-block;
@@ -80,17 +81,18 @@
     font-size: 1.2rem;
     font-weight: bolder;
 }
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-  
-  
+}
 
 
 
-  
+
+
+
 
 
 
@@ -99,30 +101,37 @@
     background-color: rgb(241, 139, 209);
     color: white;
 }
+
 #color2 {
-    background-color: rgb(176, 133, 181); 
+    background-color: rgb(176, 133, 181);
     color: white;
 }
+
 #color3 {
-    background-color: rgb(81, 21, 95); 
+    background-color: rgb(81, 21, 95);
     color: white;
 }
+
 #color4 {
-    background-color: rgb(128, 177, 233); 
+    background-color: rgb(128, 177, 233);
     color: white;
 }
+
 #color5 {
-    background-color: rgb(28, 55, 131); 
+    background-color: rgb(28, 55, 131);
     color: white;
 }
+
 #color6 {
     background-color: black;
     color: white;
 }
+
 #color7 {
     background-color: white;
     color: black;
 }
+
 .product-details button {
     display: inline-block;
     padding: 0.5rem 0.6rem;
@@ -133,4 +142,4 @@
     margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: bolder;
- }
+}

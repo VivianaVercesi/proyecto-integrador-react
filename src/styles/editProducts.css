@@ -2,18 +2,18 @@
 
 /* CONTENEDOR GENERAL */
 .products-form-container {
-  
+
   background: url(../assets/images/image1.webp) no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1rem;
   position: relative;
-  padding-top: 5rem; 
+  padding-top: 5rem;
 }
 
 /* TARJETA */
@@ -99,6 +99,7 @@
   text-align: center;
   margin: 0.4rem 0;
 }
+
 /* Toastify estilo personalizado */
 .Toastify__toast--success {
   background: rgb(176, 133, 181);
@@ -108,7 +109,8 @@
 }
 
 .Toastify__toast--error {
-  background: #d9534f; /* rojo error */
+  background: #d9534f;
+  /* rojo error */
   color: white;
   font-family: 'Oleo Script', cursive;
   font-weight: bold;
@@ -133,7 +135,7 @@
 @media (max-width: 768px) {
   .products-form-card {
     padding: 1.5rem;
-     margin-top: 4rem;
+    margin-top: 4rem;
   }
 
   .products-form-card h2 {
@@ -177,5 +179,3 @@
     font-size: 0.8rem;
   }
 }
-
- 

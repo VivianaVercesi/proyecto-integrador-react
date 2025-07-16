@@ -9,19 +9,19 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   padding: 2rem;
-  
+
 }
 
 .admin-panel-container h2 {
-    font-family: "Oleo Script", system-ui;
-    font-weight: 100;
-    font-style: normal;
-    color: #3a333e;
-    font-size: 6rem;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
-    padding: 4rem;
-  
+  font-family: "Oleo Script", system-ui;
+  font-weight: 100;
+  font-style: normal;
+  color: #3a333e;
+  font-size: 6rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(45, 32, 48, 0.5);
+  padding: 4rem;
+
 }
 
 .admin-buttons {

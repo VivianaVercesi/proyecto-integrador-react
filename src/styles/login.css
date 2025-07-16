@@ -19,7 +19,8 @@
 .login-container {
   position: relative;
   z-index: 2;
-  background: rgb(123, 98, 126); /* blanco semitransparente */
+  background: rgb(123, 98, 126);
+  /* blanco semitransparente */
   padding: 2rem 3rem;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
@@ -35,7 +36,8 @@
 
 .logout-container {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
   margin-top: 15rem;
 }
 
@@ -46,26 +48,26 @@
   margin-top: 1.5rem;
   color: whitesmoke;
   font-size: 4rem;
-  
+
 }
 
 /* Inputs */
 .login-card input {
-    color: rgb(74, 57, 77);
-    font-size: 1.5rem;
-    width: 90%; 
-    border-radius: 2px;
-    font-weight: bolder;
-    margin-top: 2rem;
-    border-radius: 20px;
-    padding: 1rem;
-    background-color: whitesmoke;
-    
-    
+  color: rgb(74, 57, 77);
+  font-size: 1.5rem;
+  width: 90%;
+  border-radius: 2px;
+  font-weight: bolder;
+  margin-top: 2rem;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: whitesmoke;
+
+
 }
 
 /* Botones */
-.login-btn {  
+.login-btn {
   font-size: 1.9rem;
   font-weight: bolder;
   padding: 0.75rem 1.5rem;
@@ -79,13 +81,13 @@
   text-decoration: none;
   border-radius: 2px;
   margin-top: 1rem;
-  
+
 }
 
-    
+
 .login-btn:hover {
   background-color: rgb(89, 66, 92);
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 .login-btn.admin {
@@ -93,10 +95,11 @@
 }
 
 .login-btn.admin:hover {
- background-color: rgb(89, 66, 92);
-    color: whitesmoke;
+  background-color: rgb(89, 66, 92);
+  color: whitesmoke;
 }
-.logout-btn {  
+
+.logout-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +115,7 @@
   text-decoration: none;
   border-radius: 2px;
 
-  
+
 }
 
 /* TABLET: Ajustes para pantallas medianas */

@@ -1,61 +1,63 @@
 /*Estilo de la barra de navegación*/
 #nav {
-    background-color: #747b77;
-    position: fixed; /* Hace que la nav sea fija */
-    top: 0; /* Coloca la nav en la parte superior */
-    width: 100%; /* Asegura que la nav ocupe todo el ancho de la página */
-    padding:  0.5rem 1rem; /* Espaciado interno */
-    z-index: 1000; /* Asegura que la nav esté por encima de otros elementos */ 
-    font-size: 1rem;
+  background-color: #747b77;
+  position: fixed;
+  /* Hace que la nav sea fija */
+  top: 0;
+  /* Coloca la nav en la parte superior */
+  width: 100%;
+  /* Asegura que la nav ocupe todo el ancho de la página */
+  padding: 0.5rem 1rem;
+  /* Espaciado interno */
+  z-index: 1000;
+  /* Asegura que la nav esté por encima de otros elementos */
+  font-size: 1rem;
 }
- /*.nav-item {
+
+/*.nav-item {
         font-size: 1.9rem;
     }*/
 
-    
-.navbar .navbar-item {
-    color:rgb(43, 25, 45)!important; 
-    font-weight: bold;
-    margin: 0 0.5rem;
-}
-.navbar .nav-item:hover{
-    font-weight:bolder;
-    color: whitesmoke;
-    }
 
-  
-.nav .navbar-brand {
-    font-weight: bold;
-    color: rgb(89, 66, 92);
-        
+.navbar .navbar-item {
+  color: rgb(43, 25, 45) !important;
+  font-weight: bold;
+  margin: 0 0.5rem;
 }
-      
-/*.navbar .nav-item {
-    color: rgb(89, 66, 92); 
-    margin: 0 10px; 
-        
-}*/
+
+.navbar .nav-item:hover {
+  font-weight: bolder;
+  color: whitesmoke;
+}
+
+
+.nav .navbar-brand {
+  font-weight: bold;
+  color: rgb(89, 66, 92);
+
+}
 
 .nav-link.active {
-    font-weight: bolder;
-    color: rgb(43, 30, 43) !important;
-    
+  font-weight: bolder;
+  color: rgb(43, 30, 43) !important;
+
 
 }
 
 .navbar .nav-link:hover {
-    
-    font-weight: bolder;
-    color:whitesmoke;
+
+  font-weight: bolder;
+  color: whitesmoke;
 }
-      
+
 .navbar-toggler {
-    border-color: #4c4974; 
+  border-color: #4c4974;
 }
 
 
 /* Íconos */
-#cart-icon, .bi-cart {
+#cart-icon,
+.bi-cart {
   margin-right: 1rem;
 }
 

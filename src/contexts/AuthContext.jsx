@@ -32,8 +32,7 @@ export function AuthProvider({ children }) {
     // Verificar si hay token en localStorage y mantener usuario logueado
     const token = localStorage.getItem('authToken');
     if (token) {
-      // En tu caso, token es solo un string simulado, podrías guardar más info en localStorage si quieres
-      // Aquí, como ejemplo simple, solo establecemos que hay usuario logueado sin detalles
+      
       setUser({ email: token.replace('fake-token-', ''), uid: 'uid-placeholder' });
     }
   }, []);
